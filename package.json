@@ -1,0 +1,39 @@
+{
+	"name": "vite-project",
+	"version": "0.0.0",
+	"private": true,
+	"type": "module",
+	"scripts": {
+		"build": "tsc -b && vite build",
+		"dev": "vite",
+		"lint": "biome check .",
+		"preview": "vite preview",
+		"sort": "sort-package-json"
+	},
+	"simple-git-hooks": {
+		"pre-commit": "npx lint-staged"
+	},
+	"lint-staged": {
+		"*.{js,ts,cjs,mjs,d.cts,d.mts,jsx,tsx,json,jsonc}": [
+			"biome check --files-ignore-unknown=true"
+		]
+	},
+	"dependencies": {
+		"react": "^18.3.1",
+		"react-dom": "^18.3.1"
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.9.4",
+		"@types/react": "^18.3.12",
+		"@types/react-dom": "^18.3.1",
+		"@vitejs/plugin-react-swc": "^3.5.0",
+		"autoprefixer": "^10.4.20",
+		"lint-staged": "^15.2.10",
+		"postcss": "^8.4.49",
+		"simple-git-hooks": "^2.11.1",
+		"sort-package-json": "^2.12.0",
+		"tailwindcss": "^3.4.15",
+		"typescript": "~5.6.2",
+		"vite": "^5.4.10"
+	}
+}
